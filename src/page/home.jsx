@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {setFun} from '../store/action';
+import {Button} from 'antd';
 class Home extends React.Component{
     constructor(props){
         super(props)
@@ -11,7 +12,10 @@ class Home extends React.Component{
         this.props.setFun('34');
     }
     render(){
-    return <div className="home" onClick={_=>this.goList()}>{this.props.state}</div>
+    return <div className="home" onClick={_=>this.goList()}>
+        <Button>{this.props.state}</Button>
+        <Button type="primary">Primary Button</Button>
+        </div>
     }
 }
 const mapStateToProps=(state)=>{
