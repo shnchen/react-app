@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import { setFun } from '../store/action';
-import '../assets/style/index.less'
+import '../assets/style/index.css'
 class List extends React.Component{
     constructor(props){
         super(props)
