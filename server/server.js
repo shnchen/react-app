@@ -1,31 +1,23 @@
-const express = require('express');
-const fs  = require('fs');
-const cookieParser = require('cookie-parser');
-const React  = require('react');
-const ReactDomServer  = require('react-dom/server');
-const path = require('path');
-const App  = require('../src/index');
-const app = express();
-const router = express.Router();
-const serverRenderer = (req,res,next)=>{
-    fs.readFile(path.resolve('./dist/index.html'),'utf8',(err,data)=>{
-        console.log(err)
-        if(err){
-            return res.status(500).send('an error occurred!');
-        }
-        return res.send(
-            data.replace(
-                '<div id="root"></div>',
-                `<div id="root">${ReactDomServer.renderToString(<App />)}</div>`
-            )
-        )
-    })
-}
-router.use('^/$',serverRenderer);
-router.use(
-    express.static(path.resolve(__dirname,'..','dist'),{maxAge:'30d'})
-)
-app.use(router);
-app.listen('9000',()=>{
-    console.log('listen 9000')
+let express=require('express');
+let app=express();
+// import React from 'react';
+// import {renderToString,renderToStaticMarkup} from 'react-dom/server';
+// import HomePage from '../src/page/home';
+
+var server=app.listen(9000,()=>{
+  var host=server.address().address;
+  var port=server.address().port;
+  console.log('server is start at',host,port);
+});
+//static
+app.use('/dist',express.static('dist'));
+
+app.get('/',(req,res)=>{
+  res.write('<!DOCTYPE html><html><head><title>Hello HomePage</title></head><body>');
+  res.write('<div id="app">');
+//   res.write(renderToString(<HomePage/>));
+  res.write(renderToString(123));
+  res.write('</div></body>');
+//   res.write('<script type="text/javascript" src="../dist/main.js"></script>');
+  res.write('</html>');
 })

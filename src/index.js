@@ -1,5 +1,5 @@
 import React from 'react';
-import  {render} from 'react-dom';
+import {hydrate} from 'react-dom';
 import {BrowserRouter,Switch,Route} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import store from './store';
@@ -24,4 +24,4 @@ const App = () =>  (
     )
 
 
-render(<App />, document.querySelector('#root'));
+hydrate(<App />, document.querySelector('#root'));

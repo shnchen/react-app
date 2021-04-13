@@ -22,11 +22,11 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     // 这里一定要使用MiniCssExtractPlugin.loader才能达到抽离css的效果
-                     MiniCssExtractPlugin.loader, 'css-loader']
+                     'style-loader', 'css-loader'],
             }, 
             {
                 test: /\.less$/,
-                use:[MiniCssExtractPlugin.loader, 'css-loader','less-loader']
+                use:['style-loader', 'css-loader','less-loader'],
             },
             {
                 test:/\.(jpe?g|png|svg|gif)$/,
