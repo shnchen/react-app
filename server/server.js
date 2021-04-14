@@ -9,15 +9,3 @@ var server=app.listen(9000,()=>{
   var port=server.address().port;
   console.log('server is start at',host,port);
 });
-//static
-app.use('/dist',express.static('dist'));
-
-app.get('/',(req,res)=>{
-  res.write('<!DOCTYPE html><html><head><title>Hello HomePage</title></head><body>');
-  res.write('<div id="app">');
-//   res.write(renderToString(<HomePage/>));
-  res.write(renderToString(123));
-  res.write('</div></body>');
-//   res.write('<script type="text/javascript" src="../dist/main.js"></script>');
-  res.write('</html>');
-})
