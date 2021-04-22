@@ -1,22 +1,7 @@
 {
-    "presets":[ [
-      "@babel/preset-env",
-      {
-        "debug": true,
-        "useBuiltIns": "usage",
-        "targets":{
-            "browsers":["> 1%", "last 2 versions", "not ie <= 8"]
-        }
-    }
-    ],"@babel/react"],
+    "presets":[ 
+      "@babel/preset-env","@babel/react"],
     "plugins": [
-        
-        [
-          "@babel/plugin-transform-runtime",
-          {
-            "corejs": 2 // 指定 runtime-corejs 的版本，目前有 2 3 两个版本
-          }
-        ],
         ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]
       ] 
 }

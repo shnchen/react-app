@@ -16,13 +16,25 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude:/node_modules/,
-                use:{loader:'babel-loader'}
+                use:{
+                    loader:'babel-loader',
+                    options: {
+                        plugins: ["@babel/plugin-transform-runtime"]
+                    }
+                }
             },
             {
                 test: /\.css$/,
                 use: [
                     // 这里一定要使用MiniCssExtractPlugin.loader才能达到抽离css的效果
-                     'style-loader', 'css-loader'],
+                     'style-loader',
+                    {
+                        loader:'css-loader',
+                        options:{
+                            modules:true
+                        }
+                    }
+                    ],
             }, 
             {
                 test: /\.less$/,

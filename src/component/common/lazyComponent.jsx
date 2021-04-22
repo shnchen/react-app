@@ -1,23 +1,24 @@
 import React from 'react';
-import { resolve } from '../../../webpack.config';
 
 const lazyComponent = (fn)=>{
     class LazyComponent extends React.Component{
         constructor(props){
             super(props);
             this.state = {
-                component:null
+                Comp: null
             }
         }
-        async componentWillMount(){
-            const {default:compoment} = await fn();
-            this.setState({compoment})
+        
+        async componentDidMount(){
+            let res = await fn();
+            this.setState({
+                Comp:res.default
+            })
         }
         render(){
-            const C = this.state.component;
-            return C?<C {...this.props} /> : null;
+            const {Comp} = this.state;
+            return Comp?<Comp {...this.props} /> : Comp;
         }
-
     }
     return LazyComponent;
 }

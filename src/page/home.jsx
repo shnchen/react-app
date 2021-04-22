@@ -5,10 +5,16 @@ import {setFun} from '../store/action';
 // import {Form, Input,Button,Checkbox} from 'antd';
 import '../assets/style/home.less';
 import Img from '../assets/images/timg1.jpeg'
+import Son from './son.jsx'
 class Home extends React.Component{
     constructor(props){
         super(props);
         this.state = {}
+    }
+    componentWillMount(){
+        console.log('f will')
+    }
+    componentDidMount(){
     }
     goList(){
         this.props.history.push('/list');
@@ -19,6 +25,7 @@ class Home extends React.Component{
             <div className="home">
                 <img onClick={()=>this.goList()} src={Img} className="logo" alt="logo"/>
                 1233
+                <Son />
             </div>
           );
     }
