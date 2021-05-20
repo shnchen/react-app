@@ -4,6 +4,7 @@ import {BrowserRouter,Switch,Route} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import store from './store';
 import routes from './route';  
+import './assets/rem'
 const App = () =>  (
         <div id="app">
             <Provider store={store}>

@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCassAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const path = require('path');
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
 module.exports = {
     resolve:{
         alias:{
@@ -63,7 +64,9 @@ module.exports = {
         //压缩css
         new OptimizeCassAssetsPlugin(),
         //压缩js
-        new TerserPlugin()
+        new TerserPlugin(),
+        new CompressionWebpackPlugin()
+       
     ],
     devServer:{
         historyApiFallback:true

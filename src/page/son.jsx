@@ -14,7 +14,7 @@ class Son extends React.Component{
     }
     render(){
         return (
-            <div className={style.son}>
+            <div className='son'>
                 龟儿子
                 <span className={style.text}>一些文字</span>
             </div>
