@@ -69,6 +69,8 @@ module.exports = {
        
     ],
     devServer:{
-        historyApiFallback:true
+        historyApiFallback:true,
+        port:8089,
+        host:'dev-test.gaodun.com',
     }
 }
