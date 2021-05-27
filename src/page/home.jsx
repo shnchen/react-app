@@ -5,13 +5,14 @@ import {bindActionCreators} from 'redux';
 import {setFun} from '../store/action';
 // import {Form, Input,Button,Checkbox} from 'antd';
 import '../assets/style/home.less';
-import Img from '../assets/images/timg1.jpeg'
+import Img from '../assets/images/10.jpeg'
 import Son from './son.jsx'
 import TipComponent from '../component/common/tip.jsx'
 import '../loader'
 import {translateLanguage} from '@gaodun.com/gtools';
 
 const message = translateLanguage('zh-TW','10423012');
+import {test} from '../api'
 console.log(message);
 class Home extends React.Component{
     constructor(props){
@@ -19,9 +20,10 @@ class Home extends React.Component{
         this.state = {}
     }
     componentWillMount(){
-        
+        test()
     }
     componentDidMount(){
+        this.setCookie('MY',1234,10)
         const data = [
             {
                 name:'a',
@@ -65,8 +67,9 @@ class Home extends React.Component{
        console.log(breadFirstSearch(data))
     }
     goList(){
-        this.props.history.push('/list');
-        this.props.setFun('34');
+        console.log(this.getCookie('MY'))
+        // this.props.history.push('/list');
+        // this.props.setFun('34');
     };
     open(tip){
         TipComponent.open({
@@ -76,6 +79,22 @@ class Home extends React.Component{
             }
         })
     }
+    setCookie(cname,cvalue,exdays){
+        var d = new Date();
+        d.setTime(d.getTime()+(exdays*1000));
+        var expires = "expires="+d.toGMTString();
+        document.cookie = cname + "=" + cvalue + "; " + expires;
+    }
+    getCookie(cname){
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++) 
+        {
+            var c = ca[i].trim();
+            if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+        }
+        return "";
+        }
     render(){
         return (
             <div className="home">

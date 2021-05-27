@@ -28,13 +28,13 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     // 这里一定要使用MiniCssExtractPlugin.loader才能达到抽离css的效果
-                     'style-loader',
-                    {
-                        loader:'css-loader',
-                        options:{
-                            modules:true
-                        }
-                    }
+                     'style-loader','css-loader'
+                    // {
+                    //     loader:'css-loader',
+                    //     options:{
+                    //         modules:true
+                    //     }
+                    // }
                     ],
             }, 
             {
@@ -62,10 +62,10 @@ module.exports = {
         //     chunkFilename: "[id].css"
         // }),
         //压缩css
-        new OptimizeCassAssetsPlugin(),
+        // new OptimizeCassAssetsPlugin(),
         //压缩js
-        new TerserPlugin(),
-        new CompressionWebpackPlugin()
+        // new TerserPlugin(),
+        // new CompressionWebpackPlugin()
        
     ],
     devServer:{
