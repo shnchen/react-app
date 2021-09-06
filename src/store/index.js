@@ -1,4 +1,9 @@
-import  {createStore} from 'redux';
-import fun from './reduces';
-const stroe = createStore(fun);
+import  {createStore,combineReducers} from 'redux';
+import frist from './reduces/frist';
+import sec from './reduces/sec'
+const a = combineReducers({
+    frist,
+    sec
+});
+const stroe = createStore(a);
 export default stroe;

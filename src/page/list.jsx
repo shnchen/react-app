@@ -7,12 +7,15 @@ class List extends React.Component{
     constructor(props){
         super(props)
     }
+    componentDidMount() {
+        console.log(this.props)
+    }
     goHome(){
         this.props.history.push('/home');
     }
     render(){
         return(
-        <div className="list" onClick={_=>{this.goHome()}}>{this.props.state}</div>
+        <div className="list" onClick={_=>{this.goHome()}}>{this.props.state.sec.secState}</div>
         )
     }
 }
@@ -23,7 +26,7 @@ const mapStateToProps = (state) =>{
 };
 const mapDispathToProps = (dispatch) =>{
     return{
-        setFun:bindActionCreators(setFun,dispatch)
+        // setFun:bindActionCreators(setFun,dispatch)
     }
 }
 export default connect(mapStateToProps,mapDispathToProps)(List);
