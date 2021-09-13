@@ -19,6 +19,8 @@ class Home extends React.Component{
     return <div className="home">
         <Button onClick={()=>{this.props.getFun({num:800})}}>{this.props.state.frist.num}</Button>
         <Button type="primary" onClick={_=>this.goList()}>Primary Button</Button>
+        <div>dsklfjklfdskjldfskj</div>
+        kdfkjdskk
         </div>
     }
 }
