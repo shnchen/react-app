@@ -13,8 +13,9 @@ class Home extends React.Component{
     }
     render(){
     return <div className="home" onClick={_=>this.goList()}>
-        <Button>{this.props.state}</Button>
-        <Button type="primary">Primary Button</Button>
+            <Button>{this.props.state}</Button>
+            <Button type="primary">Primary Button</Button>
+            <div>终于成功了</div>
         </div>
     }
 }
