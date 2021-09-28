@@ -9,6 +9,7 @@ class Home extends React.Component{
     }
     goList(){
         
+        console.log(9)
         this.props.setSec({secState:900});
         this.props.history.push('/list');
     }
