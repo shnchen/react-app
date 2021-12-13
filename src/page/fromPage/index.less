@@ -1,0 +1,220 @@
+.form-page{
+  padding:30px;
+  display:flex;
+  .page-left{
+    width:50%;
+    height:500px;
+    border-right:1px dashed #ccc;
+  }
+  .page-right{
+    padding-left: 30px;
+    padding-top: 45px;
+  }
+}
+
+.check-box{
+  input{
+    position: relative;
+    top:1px;
+    margin: 10px 5px 0 0 ;
+    cursor:pointer
+  }
+  label{
+    cursor:pointer
+  }
+}
+.select-title,.slide-title,.input-title,.switch-title,.checkbox-title{
+  font-size:14px;
+  font-weight:600;
+  margin:10px 0;
+}
+.my-select{
+  width:98%;
+  height:28px;
+  border-color:#ccc
+}
+
+.slide-wrapper{
+  .out-box{
+    width:300px;
+    height:5px;
+    border-radius: 5px;
+    background-color: #ccc;
+    position:relative;
+
+    .slide{
+      max-width:100%;
+      min-width:0px;
+      width:0;
+      height:100%;
+      background-color:#2f5fd3;
+      border-radius: 5px;
+      z-index:8
+    }
+    .mark{
+      width:15px;
+      height:15px;
+      border-radius: 50%;
+      background-color:#fff;
+      position:absolute;
+      top:-5px;
+      left:1px;
+      cursor:pointer;
+      z-index:9
+    }
+  }
+}
+.input-wrapper{
+  position:relative;
+  input{
+    width:98%;
+    border:none;
+    border-bottom:1px solid #ccc;
+    outline:none;
+    &::-webkit-input-placeholder{
+      font-size:12px;
+      color:#ccc
+    }
+  }
+  .clear-icon{
+    width:10px;
+    height:10px;
+    position: absolute;
+    right:10px;
+    bottom:8px;
+    cursor:pointer;
+    &::before{
+      content:'';
+      display:inline-block;
+      width:1px;
+      height:10px;
+      background-color:#999;
+      transform:rotate(45deg);
+      position:absolute;
+      left:0;
+      top:0
+    }
+    &::after{
+      content:'';
+      display:inline-block;
+      width:1px;
+      height:10px;
+      background-color:#999;
+      transform:rotate(-45deg);
+      position:absolute;
+      left:0;
+      top:0
+    }
+  }
+}
+
+.btn{
+  width:96%;
+  height:30px;
+  margin-top:10px;
+  margin-left:2%;
+  line-height:30px;
+  text-align:center;
+  border-radius: 4px;
+  background-color:#ccc;
+  cursor:pointer;
+}
+
+.switch-wrapper{
+  width:36px;
+  height:20px;
+  border:1px solid #888;
+  border-radius: 30px;
+  background-color: #eee;
+  padding: 1px 0 0 2px;
+}
+.scroll-bar{
+  width:15px;
+  height:15px;
+  background-color:#fff;
+  border-radius: 50%;
+  cursor:pointer;
+  position:relative;
+  left:0;
+}
+.tip-wrapper{
+  width:200px;
+  padding: 5px;
+  font-size:12px;
+  box-shadow:0px 0px 1px;
+  text-align: center;
+  border-radius: 4px;
+  position:fixed;
+  left:40%;
+  top:50px
+}
+
+.tip-icon{
+  width:10px;
+  height:10px;
+  position: absolute;
+  right:8px;
+  bottom:9px;
+  cursor:pointer;
+  &::before{
+    content:'';
+    display:inline-block;
+    width:1px;
+    height:10px;
+    background-color:#999;
+    transform:rotate(45deg);
+    position:absolute;
+    left:0;
+    top:0
+  }
+  &::after{
+    content:'';
+    display:inline-block;
+    width:1px;
+    height:10px;
+    background-color:#999;
+    transform:rotate(-45deg);
+    position:absolute;
+    left:0;
+    top:0
+  }
+}
+.right-icon{
+  width:12px;
+  height:12px;
+  border-radius: 50%;
+  background-color: #55f12e;
+  position:absolute;
+  left:5px;
+  top:8px;
+  &::before{
+    content:'';
+    display:inline-block;
+    width:2px;
+    height:5px;
+    background-color:#fff;
+    position:absolute;
+    top:5px;
+    left:3px;
+    transform:rotate(-45deg);
+  }
+  &::after{
+    content:'';
+    display:inline-block;
+    width:2px;
+    height:7px;
+    background-color:#fff;
+    position:absolute;
+    top:3px;
+    left:8px;
+    transform:rotate(45deg);
+  }
+}
+
+.text{
+  margin-top:15px;
+  font-size:14px;
+  font-weight:600;
+ text-align:center;
+ color:#000;
+}

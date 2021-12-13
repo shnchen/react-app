@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+ 
+    <!-- <link rel="stylesheet" type="text/css" href="./test2.css"> -->
+<style>
+         
+ .loader-wrapper{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -190px;
+    margin-top: -95px;
+    transform:rotate(-45deg)
+ 
+}
+ .ring{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+ }
+.ring1{
+    border:10px solid #0084c7;
+    z-index: 1;
+    position: relative;
+}
+ 
+.ring2{
+    border: 10px solid #f4c200;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+    left: 60px;
+    top: 50px;
+}
+ 
+.ring3{
+    border: 10px solid #000000;
+    z-index: 1;
+    position: absolute;
+    left: 130px;
+    top: 0px;
+}
+ 
+.ring4{
+    border: 10px solid #019f3e;
+    z-index: 1;
+    position: absolute;
+    left:200px;
+    top:50px;
+}
+ 
+.ring5{
+    border: 10px solid #df0025;
+    z-index: 2;
+    position: absolute;
+    left: 260px;
+    top: 0px;
+} 
+ h1{
+   margin-top:60px
+ }
+    </style>    
+ 
+</head>
+<body>
+      
+   
+    <div class="loader-wrapper">
+      <div class="ring ring1"></div>
+      <div class="ring ring2"></div>
+      <div class="ring ring3"></div>
+      <div class="ring ring4"></div>
+      <div class="ring ring5"></div>
+      <h1>Olympic Games @ Beijing</div>
+   </div>
+   
+ 
+</body>
+</html>
+
+<script>
+
+  (function MyFramework(){
+    var enrollment =[];
+   function Student(ID,lastName,firstName,gender,nationality,age){
+      this.ID = ID;
+      this.lastName = lastName;
+      this.firstName  = firstName;
+      this.gender = gender;
+      this.nationality = nationality;
+      this.age = age;
+      
+    }
+   window.Student=Student;
+  })()
+  Student.prototype.register =function(student,subjectCode){
+
+  }
+  Student.prototype.unregister  =function(student,subjectCode){
+
+}
+Student.prototype.count =function(student,subjectCode){
+
+}
+  console.log(Student);
+</script>
