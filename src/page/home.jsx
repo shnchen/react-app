@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {setFun} from '../store/action';
 import {Button} from 'antd';
+import Fly from '../assets/images/fly.jpeg'
 class Home extends React.Component{
     constructor(props){
         super(props)
@@ -12,9 +13,26 @@ class Home extends React.Component{
         this.props.setFun('34');
     }
     render(){
-    return <div className="home" onClick={_=>this.goList()}>
+    return <div className="home" style={{position:'relative'}} >
         <Button>{this.props.state}</Button>
-        <Button type="primary">Primary Button</Button>
+        <Button type="primary" onClick={()=>{
+            let dom = document.querySelector('.box');
+            dom.style.transition='left 3s ease 0.05s';
+            dom.style.transform='rotate(160deg)';
+            dom.style.left='100px';
+            
+           
+
+        }}>Primary Button</Button>
+        <div className='box' style={{
+            width:'50px',
+            height:'50px',
+            position:'absolute',
+            backgroundImage:`url(${Fly})`,
+            backgroundSize:'100%',
+            left:'300px',
+            top:'300px'
+        }}></div>
         </div>
     }
 }
